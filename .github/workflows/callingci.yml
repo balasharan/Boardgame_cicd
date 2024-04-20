@@ -1,14 +1,17 @@
-name: ci
-run-name: "Build from - [ Branch: '${{ github.ref_name }}' ]"
+name: test-ci
+run-name: "Build Action - Prod - [ Branch: '${{ github.ref_name }}' ]"
 on:
-  workflow_dispatch
-    inputs:
-      test:
+  workflow_dispatch:
+    inputs: 
+       test:
         type: boolean
+        description: 'deploy prod'    
         required: false
-        description: build
-        default: false
-  jobs:
-    call-ci:
-      uses: balasharan/citemplatecalling/.github/workflows/ci.yml@main
-      
+        default: 'false'                
+
+jobs:
+  call-ci-workflow:
+
+    uses: balasharan/citemplatecalling/.github/workflows/ci.yml@main
+    with:
+      TAG: rel-${{ github.run_id }}-${{ github.run_number }}
