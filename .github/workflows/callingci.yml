@@ -13,3 +13,7 @@ jobs:
   call-ci-workflow:
 
     uses: balasharan/citemplatecalling/.github/workflows/ci.yml@main
+    with:
+      
+      TAG: test-${{ github.run_id }}-${{ github.run_number }}
+      javaVersion: 17
