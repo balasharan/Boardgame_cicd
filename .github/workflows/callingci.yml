@@ -1,5 +1,5 @@
 name: test-ci
-run-name: "Build Action - Prod - [ Branch: '${{ github.ref_name }}' ]"
+run-name: "Building from - [ Branch: '${{ github.ref_name }}' ]"
 on:
   workflow_dispatch:
     inputs: 
