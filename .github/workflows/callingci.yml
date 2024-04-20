@@ -1,0 +1,14 @@
+name: ci
+run-name: "Build from - [ Branch: '${{ github.ref_name }}' ]"
+on:
+  workflow_dispatch
+    inputs:
+      test:
+        type: boolean
+        required: false
+        description: build
+        default: false
+  jobs:
+    call-ci:
+      uses: balasharan/citemplatecalling/.github/workflows/ci.yml@main
+      
