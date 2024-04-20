@@ -5,7 +5,7 @@ on:
     inputs: 
        test:
         type: boolean
-        description: 'deploy prod'    
+        description: 'build'    
         required: false
         default: 'false'                
 
@@ -13,5 +13,3 @@ jobs:
   call-ci-workflow:
 
     uses: balasharan/citemplatecalling/.github/workflows/ci.yml@main
-    with:
-      TAG: rel-${{ github.run_id }}-${{ github.run_number }}
